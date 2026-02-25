@@ -1,7 +1,0 @@
-#include <iostream>
-using namespace std;
-
-int main() {
-    cout << "Rubik's Cube Solver Started!" << endl;
-    return 0;
-}
