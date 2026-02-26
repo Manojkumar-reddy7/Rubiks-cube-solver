@@ -1,19 +1,32 @@
 #include <iostream>
 #include "include/cube.h"
+#include "include/solver.h"
 
 using namespace std;
 
+
 int main() {
+
+    cout<<"=========================\n";
+    cout<<" RUBIK'S CUBE SOLVER\n";
+    cout<<"=========================\n\n";
 
     Cube cube;
 
-    cout<< "Before Move:\n";
-    cube.display();
+    cube.scramble(3);
 
-    cube.moveR();
+    Solver solver;
 
-    cout << "\nAfter R Move:\n";
-    cube.display();
+    string solution = solver.bfsSolve(cube);
+
+    cout<<"\nSolution: "<<solution<<endl;
+
+    cube.applyAlgorithm(solution);
+
+    if(cube.isSolved())
+        cout<<"\nStatus: SOLVED \n";
+    else
+        cout<<"\nStatus: FAILED \n";
 
     return 0;
 }
