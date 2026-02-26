@@ -10,7 +10,8 @@ private:
 
 public:
     Cube();        // constructor
-    void display(); // show cube
+    void display();  // show cube
+    void moveR();
 };
 
 #endif

@@ -7,7 +7,12 @@ int main() {
 
     Cube cube;
 
-    cout << "Initial Cube State:\n";
+    cout<< "Before Move:\n";
+    cube.display();
+
+    cube.moveR();
+
+    cout << "\nAfter R Move:\n";
     cube.display();
 
     return 0;

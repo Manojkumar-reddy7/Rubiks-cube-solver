@@ -25,3 +25,21 @@ void Cube::display() {
         cout << endl;
     }
 }
+
+void Cube::moveR() {
+
+    // rotate right face clockwise
+    vector<int> temp = faces[1];
+
+    faces[1][0] = temp[6];
+    faces[1][1] = temp[3];
+    faces[1][2] = temp[0];
+    faces[1][3] = temp[7];
+    faces[1][4] = temp[4];
+    faces[1][5] = temp[1];
+    faces[1][6] = temp[8];
+    faces[1][7] = temp[5];
+    faces[1][8] = temp[2];
+
+    cout << "R move executed\n";
+}
