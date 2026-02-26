@@ -1,0 +1,6 @@
+# Ignore compiled files
+*.exe
+*.out
+*.o
+
+build/
