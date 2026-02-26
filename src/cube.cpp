@@ -17,11 +17,22 @@ Cube::Cube() {
 
 // Display cube
 void Cube::display() {
+    char colors[] = {'W','R','B','O','G','Y'};
+
+    cout << "\n======== CUBE STATE ========\n";
+
     for(int i = 0; i < 6; i++) {
-        cout << "Face " << i << ": ";
+
+        cout << "Face " << i << ":\n";
+
         for(int j = 0; j < 9; j++) {
-            cout << faces[i][j] << " ";
+
+            cout << colors[faces[i][j]] << " ";
+
+            if((j+1)%3==0)
+                cout << endl;
         }
+
         cout << endl;
     }
 }

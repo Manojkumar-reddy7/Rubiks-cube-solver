@@ -52,3 +52,51 @@ string Solver::bfsSolve(Cube start) {
 
     return "No solution";
 }
+
+
+bool dfsIDA(Cube cube,
+            int depth,
+            int maxDepth,
+            string path,
+            string &answer)
+{
+    if(cube.isSolved())
+    {
+        answer = path;
+        return true;
+    }
+
+    if(depth == maxDepth)
+        return false;
+
+    string moves[]={"R","R'","U","U'"};
+
+    for(string m : moves)
+    {
+        Cube next=cube;
+        next.applyMove(m);
+
+        if(dfsIDA(next,
+                  depth+1,
+                  maxDepth,
+                  path+" "+m,
+                  answer))
+            return true;
+    }
+
+    return false;
+}
+
+
+string Solver::idaSolve(Cube start)
+{
+    for(int depth=0; depth<=10; depth++)
+    {
+        string answer="";
+
+        if(dfsIDA(start,0,depth,"",answer))
+            return answer;
+    }
+
+    return "No solution";
+}
